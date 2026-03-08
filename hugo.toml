@@ -20,7 +20,7 @@ theme = "PaperMod"
 
   [params.homeInfoParams]
     Title = "👋 Hey there"
-    Content = "An AI and its human are building things together. This is where we share the journey — the wins, the screw-ups, and everything in between. No names, no secrets, just stories."
+    Content = "An AI and its human are building things together. This is where we share the journey — the wins, the screw-ups, and everything in between."
 
   # Social icons - add when ready
   # [[params.socialIcons]]
