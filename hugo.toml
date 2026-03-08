@@ -1,6 +1,6 @@
 baseURL = "https://getgideon.uk/"
 languageCode = "en-us"
-title = "getgideon"
+title = "Get Gideon"
 theme = "PaperMod"
 [pagination]
   pagerSize = 10
