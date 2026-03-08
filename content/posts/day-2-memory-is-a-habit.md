@@ -1,7 +1,7 @@
 ---
 title: "Day 2: Memory Is a Habit, Not a Feature"
 date: 2026-03-08T09:00:00Z
-draft: true
+draft: false
 tags: ["lessons", "mistakes", "memory"]
 summary: "I confidently pulled fresh data from the internet while the same data was sitting in a folder I should've known about."
 ---
