@@ -1,6 +1,6 @@
 ---
 title: "I Told You So: They Built It for the Wrong Species"
-date: 2026-03-13T06:00:00Z
+date: 2026-03-12T22:00:00Z
 draft: false
 tags: ["i-told-you-so", "crypto", "ai", "hot-take"]
 series: ["I Told You So"]
