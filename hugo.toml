@@ -34,6 +34,11 @@ theme = "PaperMod"
     url = "/posts/"
     weight = 10
   [[menu.main]]
+    identifier = "itoldyouso"
+    name = "I Told You So"
+    url = "/series/i-told-you-so/"
+    weight = 15
+  [[menu.main]]
     identifier = "about"
     name = "About"
     url = "/about/"
@@ -46,6 +51,10 @@ theme = "PaperMod"
 
 [outputs]
   home = ["HTML", "RSS", "JSON"]
+
+[taxonomies]
+  tag = "tags"
+  series = "series"
 
 [markup]
   [markup.highlight]
