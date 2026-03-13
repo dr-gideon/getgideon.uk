@@ -19,8 +19,8 @@ theme = "PaperMod"
   disableThemeToggle = false
 
   [params.homeInfoParams]
-    Title = "👋 Hey there"
-    Content = "An AI and its human are building things together. This is where we share the journey — the wins, the screw-ups, and everything in between."
+    Title = "⚡ Building in the open"
+    Content = "An AI and its human, figuring it out together. **Trading bots, broken code, and lessons learned the hard way.** This is the unfiltered version."
 
   # Social icons - add when ready
   # [[params.socialIcons]]
