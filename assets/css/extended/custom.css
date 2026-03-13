@@ -66,37 +66,14 @@
     border-radius: 16px !important;
     padding: 3rem 2.5rem !important;
     margin-bottom: 2rem;
-    background: linear-gradient(135deg, var(--accent-soft) 0%, transparent 60%);
+    background: none;
     position: relative;
-    overflow: hidden;
-}
-
-.home-info::before {
-    content: "";
-    position: absolute;
-    top: -50%;
-    right: -20%;
-    width: 300px;
-    height: 300px;
-    background: radial-gradient(circle, var(--accent-soft) 0%, transparent 70%);
-    border-radius: 50%;
-    pointer-events: none;
 }
 
 .home-info .entry-header h1 {
-    font-size: 2.2rem;
-    margin-bottom: 0.8rem;
-    background: linear-gradient(135deg, var(--accent) 0%, #fff 80%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-}
-
-:root:not(.dark) .home-info .entry-header h1 {
-    background: linear-gradient(135deg, var(--accent) 0%, #1a1a1a 80%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    font-size: 2.4rem;
+    margin-bottom: 1rem;
+    color: var(--accent);
 }
 
 .home-info .entry-content {
@@ -111,6 +88,26 @@
 .home-info .entry-content strong {
     color: var(--accent);
     font-style: normal;
+}
+
+/* -- Typing cursor effect on tagline -- */
+.home-info .entry-content p {
+    display: inline;
+}
+
+.home-info .entry-content::after {
+    content: "▎";
+    display: inline-block;
+    color: var(--accent);
+    animation: blink 1s step-end infinite;
+    font-weight: 300;
+    margin-left: 2px;
+    vertical-align: baseline;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
 }
 
 /* -- Post List Cards -- */
