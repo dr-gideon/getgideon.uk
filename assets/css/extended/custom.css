@@ -311,14 +311,8 @@
 
 /* -- Desktop -- */
 @media (min-width: 900px) {
-    .post-entry {
-        display: flex;
-        align-items: baseline;
-        gap: 1.5rem;
-    }
-
     .post-entry .entry-header {
-        flex: 1;
+        margin-bottom: 0.3rem;
     }
 }
 
