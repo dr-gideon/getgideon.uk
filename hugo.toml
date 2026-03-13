@@ -18,9 +18,7 @@ theme = "PaperMod"
   defaultTheme = "dark"
   disableThemeToggle = false
 
-  [params.label]
-    text = "⚡"
-    iconHeight = 0
+  disableThemeToggle = true  # We handle toggle in custom header
 
   [params.homeInfoParams]
     Title = "⚡ Building in the open"
