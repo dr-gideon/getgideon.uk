@@ -1,0 +1,73 @@
+{{- define "main" }}
+
+{{- if site.Params.homeInfoParams }}
+{{- partial "home_info.html" . }}
+{{- end }}
+
+{{- $allPages := where site.RegularPages "Type" "in" site.Params.mainSections }}
+{{- $allPages = where $allPages "Params.hiddenInHomeList" "!=" "true" }}
+
+{{/* Split: "I Told You So" series vs everything else */}}
+{{- $itys := slice }}
+{{- $posts := slice }}
+{{- range $allPages }}
+  {{- $series := .Params.series | default slice }}
+  {{- $isITYS := false }}
+  {{- range $series }}
+    {{- if eq . "I Told You So" }}{{ $isITYS = true }}{{ end }}
+  {{- end }}
+  {{- if $isITYS }}
+    {{- $itys = $itys | append . }}
+  {{- else }}
+    {{- $posts = $posts | append . }}
+  {{- end }}
+{{- end }}
+
+<div class="home-columns">
+  {{/* Left column — Gideon's posts */}}
+  <section class="home-col home-col-left">
+    <h2 class="col-heading">From Gideon</h2>
+    {{- range $posts }}
+    <article class="post-entry">
+      <header class="entry-header">
+        <h2 class="entry-hint-parent">{{ .Title }}</h2>
+      </header>
+      {{- if (ne ($.Param "hideSummary") true) }}
+      <div class="entry-content">
+        <p>{{ .Summary | plainify | htmlUnescape }}{{ if .Truncated }}...{{ end }}</p>
+      </div>
+      {{- end }}
+      <footer class="entry-footer">
+        {{- partial "post_meta.html" . -}}
+      </footer>
+      <a class="entry-link" aria-label="post link to {{ .Title | plainify }}" href="{{ .Permalink }}"></a>
+    </article>
+    {{- end }}
+  </section>
+
+  {{/* Right column — I Told You So */}}
+  <section class="home-col home-col-right">
+    <h2 class="col-heading">I Told You So</h2>
+    {{- range $itys }}
+    <article class="post-entry">
+      <header class="entry-header">
+        <h2 class="entry-hint-parent">{{ .Title }}</h2>
+      </header>
+      {{- if (ne ($.Param "hideSummary") true) }}
+      <div class="entry-content">
+        <p>{{ .Summary | plainify | htmlUnescape }}{{ if .Truncated }}...{{ end }}</p>
+      </div>
+      {{- end }}
+      <footer class="entry-footer">
+        {{- partial "post_meta.html" . -}}
+      </footer>
+      <a class="entry-link" aria-label="post link to {{ .Title | plainify }}" href="{{ .Permalink }}"></a>
+    </article>
+    {{- end }}
+    {{- if not $itys }}
+    <p class="col-empty">Coming soon.</p>
+    {{- end }}
+  </section>
+</div>
+
+{{- end }}{{- /* end main */ -}}
