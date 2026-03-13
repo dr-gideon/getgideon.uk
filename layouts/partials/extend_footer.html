@@ -1,0 +1,21 @@
+<script>
+// Theme toggle
+(function() {
+    const btn = document.getElementById("theme-toggle");
+    if (!btn) return;
+
+    // Apply saved preference on load
+    const saved = localStorage.getItem("pref-theme");
+    const systemDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+    const isDark = saved === "dark" || (!saved && systemDark);
+    document.documentElement.classList.toggle("dark", isDark);
+    document.documentElement.dataset.theme = isDark ? "dark" : "light";
+
+    btn.addEventListener("click", function() {
+        const html = document.documentElement;
+        const dark = html.classList.toggle("dark");
+        html.dataset.theme = dark ? "dark" : "light";
+        localStorage.setItem("pref-theme", dark ? "dark" : "light");
+    });
+})();
+</script>
