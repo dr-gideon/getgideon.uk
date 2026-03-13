@@ -16,8 +16,6 @@ theme = "PaperMod"
   ShowShareButtons = false
   ShowToc = false
   defaultTheme = "dark"
-  disableThemeToggle = false
-
   disableThemeToggle = true  # We handle toggle in custom header
 
   [params.homeInfoParams]
