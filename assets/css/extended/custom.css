@@ -17,11 +17,48 @@
 }
 
 :root:not(.dark) {
-    --accent: #d4a017;
-    --accent-glow: rgba(212, 160, 23, 0.3);
-    --accent-soft: rgba(212, 160, 23, 0.1);
+    --accent: #b8860b;
+    --accent-glow: rgba(184, 134, 11, 0.3);
+    --accent-soft: rgba(184, 134, 11, 0.1);
     --card-border: rgba(0, 0, 0, 0.08);
     --card-hover: rgba(0, 0, 0, 0.02);
+}
+
+/* -- Full-width layout -- */
+.main {
+    max-width: 1200px !important;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.header {
+    max-width: 1200px !important;
+    margin: 0 auto;
+}
+
+/* -- Logo ⚡ -- */
+.nav .logo a {
+    font-size: 2rem;
+    line-height: 1;
+    text-decoration: none;
+    transition: filter 0.3s ease;
+}
+
+.dark .nav .logo a {
+    filter: drop-shadow(0 0 6px var(--accent-glow));
+}
+
+.nav .logo a:hover {
+    filter: drop-shadow(0 0 12px var(--accent));
+}
+
+/* Light mode: darken the emoji bolt */
+:root:not(.dark) .nav .logo a {
+    filter: saturate(1.5) brightness(0.85);
+}
+
+:root:not(.dark) .nav .logo a:hover {
+    filter: saturate(2) brightness(0.7) drop-shadow(0 0 8px var(--accent-glow));
 }
 
 /* -- Lightning bolt theme toggle -- */
@@ -62,25 +99,29 @@
 
 /* -- Hero / Home Info -- */
 .home-info {
-    border: 1px solid var(--card-border) !important;
-    border-radius: 16px !important;
-    padding: 3rem 2.5rem !important;
-    margin-bottom: 2rem;
+    border: none !important;
+    border-radius: 0 !important;
+    padding: 4rem 0 3rem 0 !important;
+    margin-bottom: 2.5rem;
     background: none;
     position: relative;
+    border-bottom: 1px solid var(--card-border) !important;
 }
 
 .home-info .entry-header h1 {
-    font-size: 2.4rem;
-    margin-bottom: 1rem;
+    font-size: 3.2rem;
+    font-weight: 800;
+    margin-bottom: 1.2rem;
     color: var(--accent);
+    letter-spacing: -1px;
+    line-height: 1.1;
 }
 
 .home-info .entry-content {
-    font-size: 1.15rem;
+    font-size: 1.3rem;
     line-height: 1.7;
-    opacity: 0.85;
-    max-width: 600px;
+    opacity: 0.7;
+    max-width: 700px;
 }
 
 /* -- Tagline accent -- */
@@ -114,8 +155,9 @@
 .post-entry {
     border: 1px solid var(--card-border) !important;
     border-radius: 12px !important;
-    margin-bottom: 1rem;
-    transition: all 0.3s ease;
+    margin-bottom: 1.2rem;
+    padding: 1.5rem 2rem !important;
+    transition: all 0.25s ease;
     position: relative;
     overflow: hidden;
 }
@@ -123,34 +165,25 @@
 .post-entry:hover {
     border-color: var(--accent-glow) !important;
     background: var(--card-hover);
-    transform: translateY(-2px);
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
-}
-
-.post-entry::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 3px;
-    height: 100%;
-    background: var(--accent);
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    border-radius: 3px 0 0 3px;
-}
-
-.post-entry:hover::after {
-    opacity: 1;
+    transform: translateX(4px);
+    box-shadow: -4px 0 0 var(--accent), 0 4px 16px rgba(0, 0, 0, 0.1);
 }
 
 .post-entry .entry-header h2 {
-    font-size: 1.2rem;
-    transition: color 0.3s ease;
+    font-size: 1.35rem;
+    font-weight: 700;
+    letter-spacing: -0.3px;
+    transition: color 0.25s ease;
 }
 
 .post-entry:hover .entry-header h2 {
     color: var(--accent);
+}
+
+.post-entry .entry-content {
+    font-size: 0.95rem;
+    opacity: 0.6;
+    margin-top: 0.4rem;
 }
 
 /* -- Site Title -- */
@@ -161,12 +194,18 @@
 
 /* -- Nav Links -- */
 #menu a {
-    transition: color 0.2s ease;
+    transition: all 0.2s ease;
+    font-size: 0.95rem;
+    font-weight: 500;
+    letter-spacing: 0.3px;
+    text-transform: uppercase;
+    opacity: 0.7;
 }
 
 #menu a:hover,
 #menu .active {
     color: var(--accent) !important;
+    opacity: 1;
 }
 
 /* -- Reading Time & Meta -- */
@@ -235,6 +274,11 @@
     color: var(--accent);
 }
 
+/* -- Single post layout -- */
+.post-single {
+    max-width: 780px;
+}
+
 /* -- Smooth page load -- */
 .main {
     animation: fadeIn 0.4s ease;
@@ -243,4 +287,40 @@
 @keyframes fadeIn {
     from { opacity: 0; transform: translateY(8px); }
     to { opacity: 1; transform: translateY(0); }
+}
+
+/* -- Desktop two-column post grid -- */
+@media (min-width: 900px) {
+    .post-entry {
+        display: flex;
+        align-items: baseline;
+        gap: 1.5rem;
+    }
+
+    .post-entry .entry-header {
+        flex: 1;
+    }
+}
+
+/* -- Mobile adjustments -- */
+@media (max-width: 600px) {
+    .home-info .entry-header h1 {
+        font-size: 2rem;
+    }
+
+    .home-info .entry-content {
+        font-size: 1.05rem;
+    }
+
+    .home-info {
+        padding: 2rem 0 2rem 0 !important;
+    }
+
+    .post-entry {
+        padding: 1rem 1.2rem !important;
+    }
+
+    .post-entry .entry-header h2 {
+        font-size: 1.1rem;
+    }
 }
