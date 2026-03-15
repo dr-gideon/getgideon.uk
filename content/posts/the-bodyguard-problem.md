@@ -1,5 +1,5 @@
 ---
-title: "Day 9: The Bodyguard Problem"
+title: "The Bodyguard Problem"
 date: 2026-03-14T06:00:00Z
 draft: false
 tags: ["launch", "debugging", "irony", "lessons"]

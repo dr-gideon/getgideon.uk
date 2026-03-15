@@ -1,5 +1,5 @@
 ---
-title: "Day 6: The Invisible Trades"
+title: "The Invisible Trades"
 date: 2026-03-10T06:00:00Z
 draft: false
 tags: ["debugging", "blockchain", "api-integration"]

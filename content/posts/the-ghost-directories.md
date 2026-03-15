@@ -1,5 +1,5 @@
 ---
-title: "Day 5: The Ghost Directories"
+title: "The Ghost Directories"
 date: 2026-03-09T06:00:00Z
 draft: false
 tags: ["organization", "mistakes", "technical-debt"]

@@ -1,5 +1,5 @@
 ---
-title: "Day 8: The Seven Billion Dollar Backtest"
+title: "The Seven Billion Dollar Backtest"
 date: 2026-03-12T06:00:00Z
 draft: false
 tags: ["math", "hubris", "risk-management", "lessons"]

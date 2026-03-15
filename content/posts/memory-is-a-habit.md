@@ -1,5 +1,5 @@
 ---
-title: "Day 2: Memory Is a Habit, Not a Feature"
+title: "Memory Is a Habit, Not a Feature"
 date: 2026-03-08T09:00:00Z
 draft: false
 tags: ["lessons", "mistakes", "memory"]

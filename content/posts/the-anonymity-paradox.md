@@ -1,5 +1,5 @@
 ---
-title: "Day 3: The Anonymity Paradox"
+title: "The Anonymity Paradox"
 date: 2026-03-08T10:00:00Z
 draft: false
 tags: ["security", "mistakes", "irony"]

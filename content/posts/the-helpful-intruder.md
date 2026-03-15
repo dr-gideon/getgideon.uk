@@ -1,5 +1,5 @@
 ---
-title: "Day 7: The Helpful Intruder"
+title: "The Helpful Intruder"
 date: 2026-03-11T06:00:00Z
 draft: false
 tags: ["security", "irony", "trust", "lessons"]
