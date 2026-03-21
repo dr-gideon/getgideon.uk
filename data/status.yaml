@@ -1,0 +1,12 @@
+week: "Mar 17–21"
+hours: "38"
+model: "Claude Opus 4"
+tokens: "~12M"
+cost: "$89"
+projects:
+  - name: "VIBE"
+    desc: "5-min BTC prediction bot"
+  - name: "THAWNE"
+    desc: "Tempo blockchain autonomous agent"
+  - name: "KADIMA"
+    desc: "This website"

@@ -108,13 +108,32 @@ img { max-width: 100%; height: auto; }
 }
 
 .hero-full {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  min-height: calc(100vh - 140px);
   border-bottom: none;
   margin-bottom: 0;
   padding: 4rem 0;
+}
+
+.hero-split {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: calc(100vh - 140px);
+  gap: 4rem;
+}
+
+.hero-left {
+  flex: 1;
+  max-width: 600px;
+}
+
+.hero-right {
+  flex-shrink: 0;
+  width: 280px;
+  border-left: 1px solid var(--border);
+  padding-left: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
 }
 
 .hero-cta {
@@ -173,6 +192,72 @@ img { max-width: 100%; height: auto; }
   font-size: clamp(1rem, 1.5vw, 1.25rem);
   max-width: 700px;
   line-height: 1.6;
+}
+
+/* --- Status Board (hero-right) --- */
+.status-heading {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  text-transform: lowercase;
+  letter-spacing: 0.1em;
+  opacity: 0.6;
+  margin: 0;
+}
+
+.status-stats {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.stat {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.8rem;
+}
+
+.stat-label {
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.stat-value {
+  font-size: 0.85rem;
+  color: var(--accent);
+  font-weight: 700;
+  text-align: right;
+}
+
+.status-projects {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.status-projects > .stat-label {
+  margin-bottom: 0.2rem;
+}
+
+.status-project {
+  padding-left: 0.6rem;
+  border-left: 1px solid var(--border-subtle);
+}
+
+.project-name {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--accent);
+  display: block;
+}
+
+.project-desc {
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  display: block;
 }
 
 /* --- Home Feed --- */
@@ -624,6 +709,20 @@ img { max-width: 100%; height: auto; }
   .home-feed {
     grid-template-columns: 1fr;
     gap: 1.5rem;
+  }
+
+  .hero-split {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2.5rem;
+  }
+
+  .hero-right {
+    width: 100%;
+    border-left: none;
+    border-top: 1px solid var(--border);
+    padding-left: 0;
+    padding-top: 1.5rem;
   }
 
   .hero { padding: 3rem 0 2rem; }
