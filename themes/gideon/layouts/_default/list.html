@@ -9,6 +9,16 @@
   </div>
 
   {{- $pages := .Pages }}
+  {{- if eq .RelPermalink "/posts/" }}
+    {{- $filtered := slice }}
+    {{- range $pages }}
+      {{- $series := .Params.series | default slice }}
+      {{- $isITYS := false }}
+      {{- range $series }}{{ if eq . "I Told You So" }}{{ $isITYS = true }}{{ end }}{{ end }}
+      {{- if not $isITYS }}{{ $filtered = $filtered | append . }}{{ end }}
+    {{- end }}
+    {{- $pages = $filtered }}
+  {{- end }}
   {{- $grouped := $pages.GroupByDate "January 2006" }}
 
   {{- range $grouped }}
