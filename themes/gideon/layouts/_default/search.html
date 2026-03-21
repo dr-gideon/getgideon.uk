@@ -1,0 +1,54 @@
+{{ define "main" }}
+<div class="search-page">
+  <div class="list-header">
+    <h1 class="list-title">Search</h1>
+  </div>
+  <input type="text" id="search-input" class="search-input" placeholder="Type to search..." autofocus>
+  <div id="search-results" class="search-results"></div>
+</div>
+<script>
+(function(){
+  var data;
+  var input = document.getElementById('search-input');
+  var results = document.getElementById('search-results');
+
+  fetch('/index.json').then(r => r.json()).then(function(d){
+    data = d;
+  });
+
+  function formatDate(dateStr) {
+    if (!dateStr) return '';
+    var d = new Date(dateStr);
+    var months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+    return months[d.getMonth()] + ' ' + d.getDate() + ', ' + d.getFullYear();
+  }
+
+  input.addEventListener('input', function(){
+    var q = this.value.trim().toLowerCase();
+    results.innerHTML = '';
+    if (!q || !data) return;
+    var matches = data.filter(function(item){
+      return (item.title && item.title.toLowerCase().includes(q)) ||
+             (item.content && item.content.toLowerCase().includes(q)) ||
+             (item.summary && item.summary.toLowerCase().includes(q));
+    });
+    if (!matches.length) {
+      results.innerHTML = '<p class="col-empty">Nothing found for "' + q + '"</p>';
+      return;
+    }
+    results.innerHTML = '<p class="search-count">' + matches.length + ' result' + (matches.length === 1 ? '' : 's') + '</p>';
+    matches.forEach(function(item){
+      var el = document.createElement('article');
+      el.className = 'log-entry';
+      el.innerHTML = '<a href="' + item.permalink + '" class="log-entry-link">' +
+        '<div class="log-body">' +
+          '<h3 class="log-title">' + item.title + '</h3>' +
+          (item.summary ? '<p class="log-excerpt">' + item.summary.substring(0, 180) + '</p>' : '') +
+          '<div class="log-meta"><span class="log-reading-time">' + formatDate(item.date) + '</span></div>' +
+        '</div></a>';
+      results.appendChild(el);
+    });
+  });
+})();
+</script>
+{{ end }}

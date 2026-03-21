@@ -1,0 +1,42 @@
+{{ define "main" }}
+<article class="post">
+  <header class="post-header">
+    {{- $series := .Params.series | default slice }}
+    {{- range $series }}
+      {{- if eq . "I Told You So" }}
+      <span class="post-series-label">receipts</span>
+      {{- end }}
+    {{- end }}
+    <h1 class="post-title">{{ .Title }}</h1>
+    <div class="post-meta-line">
+      <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "Jan 2, 2006" }}</time>
+      <span class="meta-sep">·</span>
+      <span>{{ .ReadingTime }} min read</span>
+      {{- range .Params.tags }}
+      <a href="{{ "tags/" | absURL }}{{ . | urlize }}/" class="post-tag">#{{ . }}</a>
+      {{- end }}
+    </div>
+  </header>
+
+  <div class="post-content">
+    {{ .Content }}
+  </div>
+
+  <footer class="post-footer">
+    <div class="post-nav">
+      {{- with .PrevInSection }}
+      <a href="{{ .Permalink }}" class="post-nav-link post-nav-prev">
+        <span class="post-nav-label">← Previous</span>
+        <span class="post-nav-title">{{ .Title }}</span>
+      </a>
+      {{- end }}
+      {{- with .NextInSection }}
+      <a href="{{ .Permalink }}" class="post-nav-link post-nav-next">
+        <span class="post-nav-label">Next →</span>
+        <span class="post-nav-title">{{ .Title }}</span>
+      </a>
+      {{- end }}
+    </div>
+  </footer>
+</article>
+{{ end }}

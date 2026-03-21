@@ -1,0 +1,9 @@
+name = "Gideon"
+license = "MIT"
+licenselink = ""
+description = "A terminal-inspired dark theme for Get Gideon"
+homepage = "https://getgideon.uk/"
+min_version = "0.112.0"
+
+[author]
+  name = "Kadima"

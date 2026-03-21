@@ -1,0 +1,49 @@
+{{ define "main" }}
+<div class="list-page">
+
+  <div class="list-header">
+    <h1 class="list-title">{{ .Title }}</h1>
+    {{- if .Content }}
+    <div class="list-intro">{{ .Content }}</div>
+    {{- end }}
+  </div>
+
+  {{- $pages := .Pages }}
+  {{- $grouped := $pages.GroupByDate "January 2006" }}
+
+  {{- range $grouped }}
+  <section class="month-group">
+    <h2 class="month-label">{{ .Key }}</h2>
+    <div class="month-posts">
+      {{- range .Pages }}
+      <article class="log-entry">
+        <a href="{{ .Permalink }}" class="log-entry-link">
+          <div class="log-date">
+            <span class="log-day">{{ .Date.Format "02" }}</span>
+          </div>
+          <div class="log-body">
+            <h3 class="log-title">{{ .Title }}</h3>
+            {{- if .Summary }}
+            <p class="log-excerpt">{{ .Summary | plainify | htmlUnescape | truncate 180 }}</p>
+            {{- end }}
+            <div class="log-meta">
+              <span class="log-reading-time">{{ .ReadingTime }} min read</span>
+              {{- range .Params.tags }}
+              <span class="log-tag">#{{ . }}</span>
+              {{- end }}
+            </div>
+          </div>
+        </a>
+      </article>
+      {{- end }}
+    </div>
+  </section>
+  {{- end }}
+
+  {{- if not $pages }}
+  <p class="col-empty">Nothing here yet. Check back soon.</p>
+  {{- end }}
+
+  {{- template "_internal/pagination.html" . }}
+</div>
+{{ end }}
