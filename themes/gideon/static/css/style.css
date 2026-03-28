@@ -747,6 +747,128 @@ img { max-width: 100%; height: auto; }
   .cta-link { text-align: center; }
 }
 
+/* --- Lab Page --- */
+.lab-page { max-width: var(--content-width); margin: 0; }
+
+.lab-header {
+  margin-bottom: 3rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.lab-title {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 700;
+  color: var(--accent);
+  margin-bottom: 0.5rem;
+}
+
+.lab-intro {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
+.lab-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.lab-card {
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--accent);
+  padding: 1.8rem 2rem;
+  border-radius: 4px;
+  background: var(--bg-raised);
+  transition: border-color 0.15s;
+}
+
+.lab-card:hover {
+  border-color: var(--accent);
+}
+
+.lab-card-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 0.6rem;
+}
+
+.lab-card-name {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--accent);
+  margin: 0;
+}
+
+.lab-card-status {
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  padding: 0.25rem 0.7rem;
+  border-radius: 3px;
+  flex-shrink: 0;
+}
+
+.lab-status-live {
+  color: #0a0a0a;
+  background: var(--accent);
+}
+
+.lab-status-beta {
+  color: var(--accent);
+  border: 1px solid var(--accent);
+  background: transparent;
+}
+
+.lab-card-tagline {
+  font-size: 1rem;
+  color: var(--text);
+  font-weight: 700;
+  margin-bottom: 0.8rem;
+}
+
+.lab-card-desc {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  line-height: 1.7;
+  margin-bottom: 1.2rem;
+}
+
+.lab-card-tech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1.2rem;
+}
+
+.lab-tech-tag {
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  border: 1px solid var(--border);
+  padding: 0.2rem 0.6rem;
+  border-radius: 3px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.lab-card-links {
+  display: flex;
+  gap: 1.2rem;
+}
+
+.lab-link {
+  font-size: 0.85rem;
+  color: var(--accent);
+}
+
+@media (max-width: 480px) {
+  .lab-card { padding: 1.2rem 1rem; }
+  .lab-card-head { flex-direction: column; align-items: flex-start; gap: 0.5rem; }
+}
+
 /* --- Post Card Series Tag --- */
 .post-card-series {
   display: inline-block;

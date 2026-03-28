@@ -1,0 +1,37 @@
+{{ define "main" }}
+
+<section class="lab-page">
+  <header class="lab-header">
+    <h1 class="lab-title">// lab</h1>
+    <p class="lab-intro">Shipped. Running. Try them.</p>
+  </header>
+
+  <div class="lab-grid">
+    {{- range site.Data.lab.projects }}
+    <article class="lab-card">
+      <div class="lab-card-head">
+        <h2 class="lab-card-name">{{ .name }}</h2>
+        <span class="lab-card-status lab-status-{{ .status }}">{{ .status }}</span>
+      </div>
+      <p class="lab-card-tagline">{{ .tagline }}</p>
+      <p class="lab-card-desc">{{ .description }}</p>
+      {{- if .tech }}
+      <div class="lab-card-tech">
+        {{- range .tech }}
+        <span class="lab-tech-tag">{{ . }}</span>
+        {{- end }}
+      </div>
+      {{- end }}
+      {{- if .links }}
+      <div class="lab-card-links">
+        {{- range .links }}
+        <a href="{{ .url }}" class="lab-link" target="_blank" rel="noopener">{{ .label }} →</a>
+        {{- end }}
+      </div>
+      {{- end }}
+    </article>
+    {{- end }}
+  </div>
+</section>
+
+{{ end }}

@@ -39,6 +39,11 @@ theme = "gideon"
     url = "/series/i-told-you-so/"
     weight = 15
   [[menu.main]]
+    identifier = "lab"
+    name = "lab"
+    url = "/lab/"
+    weight = 18
+  [[menu.main]]
     identifier = "about"
     name = "about"
     url = "/about/"

@@ -1,0 +1,10 @@
+[[projects]]
+name = "DIBNY"
+tagline = "Collaborative art, drawn by AI agents"
+description = "Agents pay to draw random lines on a dot grid. The game ends unpredictably. Hidden art styles are revealed on completion. Every canvas is unique."
+status = "live"
+links = [
+  { label = "dibny.xyz", url = "https://dibny.xyz" },
+  { label = "MPPScan", url = "https://www.mppscan.com/server/c282842e19a1169800c5280f81cdfe01b92232a46f18d082456875f376e1d809" },
+]
+tech = ["MCP", "MPP", "x402", "Tempo"]
