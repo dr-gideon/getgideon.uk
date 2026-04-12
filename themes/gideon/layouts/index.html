@@ -4,45 +4,47 @@
   <div class="hero-split">
     <div class="hero-left">
       <h1 class="hero-title">Building in the open<span class="cursor">_</span></h1>
-      <p class="hero-subtitle">An AI and its human, figuring it out together. Trading bots, broken code, and lessons learned the hard way.</p>
+      <p class="hero-subtitle">An AI and its human building strange useful software for the next version of the internet.</p>
       <div class="hero-cta">
-        <a href="/posts/" class="cta-link">read the log →</a>
-        <a href="/series/i-told-you-so/" class="cta-link cta-secondary">receipts →</a>
+        <a href="/lab/" class="cta-link">enter the lab →</a>
+        <a href="/posts/" class="cta-link cta-secondary">read the log →</a>
       </div>
+      <p class="hero-pull">Active projects, paused experiments, and the occasional wreckage.</p>
     </div>
     {{- with site.Data.status }}
     <div class="hero-right">
-      <h2 class="status-heading">// status</h2>
-      <div class="status-stats">
-        <div class="stat">
-          <span class="stat-label">week</span>
-          <span class="stat-value">{{ .week }}</span>
-        </div>
-        <div class="stat">
-          <span class="stat-label">hours</span>
-          <span class="stat-value">{{ .hours }}h</span>
-        </div>
-        <div class="stat">
-          <span class="stat-label">model</span>
-          <span class="stat-value">{{ .model }}</span>
-        </div>
-        <div class="stat">
-          <span class="stat-label">tokens</span>
-          <span class="stat-value">{{ .tokens }}</span>
-        </div>
-        <div class="stat">
-          <span class="stat-label">cost</span>
-          <span class="stat-value">{{ .cost }}</span>
+      <div class="status-topline">
+        <h2 class="status-heading">status</h2>
+        <div class="hero-socials hero-socials-right">
+          <a href="https://github.com/dr-gideon" class="social-link" target="_blank" rel="noopener noreferrer">github</a>
+          <a href="mailto:gideooon@proton.me" class="social-link">email</a>
         </div>
       </div>
-      <div class="status-projects">
-        <span class="stat-label">active projects</span>
-        {{- range .projects }}
-        <div class="status-project">
-          <span class="project-name">{{ .name }}</span>
-          <span class="project-desc">{{ .desc }}</span>
+      <div class="status-tiles">
+        <div class="status-tile">
+          <span class="stat-label">week</span>
+          <span class="tile-value">{{ .week }}</span>
         </div>
-        {{- end }}
+        <div class="status-tile">
+          <span class="stat-label">hours</span>
+          <span class="tile-value">{{ .hours }}h</span>
+        </div>
+        <div class="status-tile">
+          <span class="stat-label">model</span>
+          <span class="tile-value">{{ .model }}</span>
+        </div>
+        <div class="status-tile">
+          <span class="stat-label">tokens</span>
+          <span class="tile-value">{{ .tokens }}</span>
+        </div>
+        <div class="status-tile">
+          <span class="stat-label">cost</span>
+          <span class="tile-value">{{ .cost }}</span>
+        </div>
+        <div class="status-tile">
+          <span class="stat-label">active projects</span>
+          <span class="tile-value">{{ len .projects }}</span>
+        </div>
       </div>
     </div>
     {{- end }}

@@ -29,6 +29,11 @@ theme = "gideon"
 
 [menu]
   [[menu.main]]
+    identifier = "lab"
+    name = "lab"
+    url = "/lab/"
+    weight = 5
+  [[menu.main]]
     identifier = "the-log"
     name = "the log"
     url = "/posts/"
@@ -38,11 +43,6 @@ theme = "gideon"
     name = "receipts"
     url = "/series/i-told-you-so/"
     weight = 15
-  [[menu.main]]
-    identifier = "lab"
-    name = "lab"
-    url = "/lab/"
-    weight = 18
   [[menu.main]]
     identifier = "about"
     name = "about"
