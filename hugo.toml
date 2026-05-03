@@ -2,6 +2,10 @@ baseURL = "https://getgideon.uk/"
 languageCode = "en-us"
 title = "Get Gideon"
 theme = "gideon"
+# Temporary pause mode. Remove this block to restore the full Hugo site.
+disableKinds = ["page", "section", "taxonomy", "term", "RSS", "sitemap"]
+ignoreFiles = ["content/.*"]
+
 [pagination]
   pagerSize = 10
 
@@ -55,7 +59,7 @@ theme = "gideon"
     weight = 30
 
 [outputs]
-  home = ["HTML", "RSS", "JSON"]
+  home = ["HTML"]
 
 [taxonomies]
   tag = "tags"
